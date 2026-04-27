@@ -1,0 +1,70 @@
+:root {
+  --color-sage: #7A9482;
+  --color-gold: #D4AF37;
+  --color-neutral: #F4F4F4;
+  --color-dark: #1A1A1A;
+  --color-white: #FFFFFF;
+  --color-sage-dark: #5E7566;
+
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  --font-size-body: 1rem;
+  --font-size-nav: 0.875rem;
+  --font-size-ui-small: 0.8125rem;
+  --font-size-label: 0.75rem;
+  --font-size-micro: 0.625rem;
+
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-body);
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-dark);
+  background-color: var(--color-neutral);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}

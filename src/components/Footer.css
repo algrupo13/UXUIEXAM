@@ -1,0 +1,185 @@
+.footer {
+  background-color: #f8f6f4;
+  padding: var(--space-64) var(--space-24) var(--space-24);
+}
+
+.footer__wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer__main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-48);
+  margin-bottom: var(--space-48);
+}
+
+.footer__brand {
+  max-width: 320px;
+}
+
+.footer__logo {
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: var(--space-16);
+}
+
+.footer__tagline {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.footer__nav-link {
+  font-family: var(--font-body);
+  font-size: var(--font-size-nav);
+  font-weight: 500;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.footer__nav-link:hover {
+  color: var(--color-sage);
+}
+
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  padding-top: var(--space-24);
+  border-top: 1px solid #e8e6e4;
+}
+
+.footer__copyright {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: #888;
+}
+
+.footer__legal {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: #888;
+}
+
+.footer__legal-link {
+  color: #888;
+  transition: color 0.2s ease;
+}
+
+.footer__legal-link:hover {
+  color: var(--color-sage);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: #888;
+  transition: color 0.2s ease;
+}
+
+.footer__social-link:hover {
+  color: var(--color-sage);
+}
+
+@media (min-width: 640px) {
+  .footer__main {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer__payments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  margin-bottom: var(--space-48);
+  padding: var(--space-32);
+  background-color: var(--color-white);
+  border-radius: 12px;
+  border: 1px solid #e8e6e4;
+}
+
+.footer__payments-label {
+  font-family: var(--font-body);
+  font-size: var(--font-size-nav);
+  font-weight: 600;
+  color: var(--color-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer__payments-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.footer__payment-badge {
+  font-family: var(--font-body);
+  font-size: var(--font-size-label);
+  font-weight: 700;
+  padding: var(--space-8) var(--space-16);
+  border-radius: 20px;
+  color: var(--color-white);
+  letter-spacing: 0.5px;
+}
+
+.footer__payment-badge--visa {
+  background-color: #1a1f71;
+}
+
+.footer__payment-badge--mastercard {
+  background: linear-gradient(90deg, #eb001b 0%, #f79e1b 100%);
+}
+
+.footer__payment-badge--webpay {
+  background-color: #e31837;
+}
+
+.footer__payment-badge--mercado {
+  background-color: #00b2e3;
+}
+
+.footer__payment-badge--paypal {
+  background-color: #003087;
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding: var(--space-80) var(--space-24) var(--space-24);
+  }
+}

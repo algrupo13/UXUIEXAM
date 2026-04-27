@@ -1,0 +1,288 @@
+.floating-help__fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 500;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-sage);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(122, 148, 130, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-help__fab:hover {
+  transform: scale(1.08);
+  background-color: var(--color-sage-dark);
+  box-shadow: 0 6px 24px rgba(122, 148, 130, 0.5);
+}
+
+.floating-help__fab--active {
+  background-color: var(--color-dark);
+}
+
+.floating-help__menu {
+  position: fixed;
+  bottom: 92px;
+  right: 24px;
+  z-index: 499;
+  width: 280px;
+  background-color: var(--color-white);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  animation: floating-help-slide-up 0.25s ease;
+}
+
+@keyframes floating-help-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.floating-help__menu-header {
+  padding: var(--space-16) var(--space-20);
+  background-color: var(--color-sage);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-body);
+  font-weight: 700;
+}
+
+.floating-help__menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-12) var(--space-16);
+  text-decoration: none;
+  color: var(--color-dark);
+  transition: background-color 0.15s ease;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+}
+
+.floating-help__menu-item:hover {
+  background-color: var(--color-neutral);
+}
+
+.floating-help__menu-item--whatsapp:hover {
+  background-color: rgba(37, 211, 102, 0.08);
+}
+
+.floating-help__menu-item--chat:hover {
+  background-color: rgba(122, 148, 130, 0.08);
+}
+
+.floating-help__menu-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-neutral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-sage);
+}
+
+.floating-help__menu-item--whatsapp .floating-help__menu-icon {
+  background-color: #25d366;
+  color: var(--color-white);
+}
+
+.floating-help__menu-item--chat .floating-help__menu-icon {
+  background-color: var(--color-sage);
+  color: var(--color-white);
+}
+
+.floating-help__menu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.floating-help__menu-info strong {
+  font-family: var(--font-body);
+  font-size: var(--font-size-nav);
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.floating-help__menu-info span {
+  font-family: var(--font-body);
+  font-size: var(--font-size-label);
+  font-weight: 400;
+  color: #888;
+}
+
+.floating-help__chat {
+  position: fixed;
+  bottom: 92px;
+  right: 24px;
+  z-index: 499;
+  width: 340px;
+  max-width: calc(100vw - 48px);
+  height: 480px;
+  max-height: calc(100vh - 120px);
+  background-color: var(--color-white);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: floating-help-slide-up 0.25s ease;
+}
+
+.floating-help__chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-16) var(--space-20);
+  background-color: var(--color-sage);
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+.floating-help__chat-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-body);
+  font-weight: 700;
+}
+
+.floating-help__chat-close {
+  color: var(--color-white);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.floating-help__chat-close:hover {
+  opacity: 0.7;
+}
+
+.floating-help__chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  background-color: #f9f9f7;
+}
+
+.floating-help__chat-message {
+  max-width: 85%;
+  padding: var(--space-12) var(--space-16);
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: var(--font-size-nav);
+  line-height: 1.5;
+}
+
+.floating-help__chat-message--bot {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.floating-help__chat-message p {
+  margin: 0 0 var(--space-8) 0;
+}
+
+.floating-help__chat-message ul {
+  margin: 0;
+  padding-left: var(--space-16);
+  color: #666;
+}
+
+.floating-help__chat-message li {
+  margin-bottom: var(--space-4);
+}
+
+.floating-help__chat-time {
+  display: block;
+  font-size: var(--font-size-label);
+  color: #aaa;
+  margin-top: var(--space-4);
+}
+
+.floating-help__chat-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-16);
+  border-top: 1px solid #ececec;
+  background-color: var(--color-white);
+  flex-shrink: 0;
+}
+
+.floating-help__chat-input {
+  flex: 1;
+  padding: var(--space-10) var(--space-14);
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  font-family: var(--font-body);
+  font-size: var(--font-size-nav);
+  background-color: var(--color-neutral);
+  outline: none;
+}
+
+.floating-help__chat-input:focus {
+  border-color: var(--color-sage);
+}
+
+.floating-help__chat-send {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-sage);
+  color: var(--color-white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.floating-help__chat-send:hover {
+  background-color: var(--color-sage-dark);
+}
+
+@media (max-width: 480px) {
+  .floating-help__chat {
+    width: calc(100vw - 32px);
+    right: 16px;
+    bottom: 84px;
+  }
+
+  .floating-help__menu {
+    width: calc(100vw - 48px);
+    right: 16px;
+    bottom: 84px;
+  }
+}

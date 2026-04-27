@@ -1,0 +1,110 @@
+.product-grid {
+  background-color: var(--color-neutral);
+  padding: var(--space-48) var(--space-24);
+}
+
+.product-grid__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-32);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-grid__label {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+.product-grid__title-group {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-16);
+}
+
+.product-grid__title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.2;
+}
+
+.product-grid__title-accent {
+  color: var(--color-sage);
+  font-style: italic;
+}
+
+.product-grid__link {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-sage);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+.product-grid__link:hover {
+  color: var(--color-sage-dark);
+}
+
+.product-grid__grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-16);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: var(--space-8);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-grid__grid::-webkit-scrollbar {
+  display: none;
+}
+
+.product-grid__grid > * {
+  flex: 0 0 75vw;
+  max-width: 300px;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 640px) {
+  .product-grid__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-24);
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+
+  .product-grid__grid > * {
+    flex: none;
+    max-width: none;
+    scroll-snap-align: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    padding: var(--space-64) var(--space-24);
+  }
+
+  .product-grid__grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-24);
+  }
+
+  .product-grid__title {
+    font-size: 2rem;
+  }
+}
