@@ -6,6 +6,8 @@ function CartDrawer({ isOpen, item, onClose, onIncrement, onDecrement, onRemove 
   const [showShippingCalc, setShowShippingCalc] = useState(false)
   const [cartRegion, setCartRegion] = useState('')
   const [cartShippingCost, setCartShippingCost] = useState(0)
+  const [showInstructions, setShowInstructions] = useState(false)
+  const [showDiscount, setShowDiscount] = useState(false)
 
   const subtotal = item ? item.price * item.quantity : 0
   const originalSubtotal = item ? item.originalPrice * item.quantity : 0
@@ -87,14 +89,32 @@ function CartDrawer({ isOpen, item, onClose, onIncrement, onDecrement, onRemove 
         )}
 
         <div className="cart__footer">
-          <button className="cart__row" type="button">
+          <button className="cart__row" type="button" onClick={() => setShowInstructions(!showInstructions)}>
             <span>Instrucciones especiales</span>
-            <span>+</span>
+            <span className="cart__row-toggle">{showInstructions ? '−' : '+'}</span>
           </button>
-          <button className="cart__row" type="button">
+          {showInstructions && (
+            <div className="cart__accordion-panel">
+              <textarea
+                className="cart__accordion-textarea cart__accordion-input"
+                placeholder="Ej: dejar en conserjería, timbrar 2 veces..."
+                maxLength="500"
+              />
+            </div>
+          )}
+
+          <button className="cart__row" type="button" onClick={() => setShowDiscount(!showDiscount)}>
             <span>Descuento</span>
-            <span>+</span>
+            <span className="cart__row-toggle">{showDiscount ? '−' : '+'}</span>
           </button>
+          {showDiscount && (
+            <div className="cart__accordion-panel">
+              <div className="cart__accordion-row">
+                <input type="text" className="cart__accordion-input" placeholder="Código de descuento" />
+                <button className="cart__accordion-btn" type="button">Aplicar</button>
+              </div>
+            </div>
+          )}
 
           <div className="cart__summary">
             <div className="cart__summary-row">
