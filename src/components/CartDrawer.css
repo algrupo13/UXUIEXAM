@@ -1,7 +1,7 @@
 .cart {
   position: fixed;
   inset: 0;
-  z-index: 200;
+  z-index: 2000;
   pointer-events: none;
 }
 
@@ -333,18 +333,19 @@
 
 .cart__checkout {
   width: 100%;
-  background-color: var(--color-gold);
+  background: var(--gradient-gold);
   color: var(--color-dark);
   border-radius: 8px;
   padding: var(--space-16) var(--space-24);
   font-family: var(--font-body);
   font-size: var(--font-size-body);
   font-weight: 600;
-  transition: background-color 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .cart__checkout:hover {
-  background-color: #c9a22e;
+  filter: brightness(0.9);
+  transform: translateY(-1px);
 }
 
 .cart__payments {

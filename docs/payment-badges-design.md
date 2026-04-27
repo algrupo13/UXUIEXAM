@@ -14,4 +14,4 @@ Payment method badges in the **Cart Drawer** (`CartDrawer.css`) use **brand colo
 > **DO NOT** override these to theme monocromatic colors. Brand recognition at checkout reduces user anxiety and increases conversion.
 
 ## PDP & Footer
-Payment references in **Product Detail page** and **Footer** use **monocromatic muted tones** (`#8a9e8e` or similar) to preserve the organic, clean aesthetic of the Adikari brand.
+Payment references in **Product Detail page** and **Footer** use **monochromatic muted tones** (`var(--color-sage-light)` or `#8DA394`) to preserve the organic, clean aesthetic of the Adikari brand.

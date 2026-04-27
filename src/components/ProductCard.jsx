@@ -7,7 +7,10 @@ function ProductCard({ product, onAddToCart, onDoubleClick }) {
   return (
     <div className="product-card" onDoubleClick={() => onDoubleClick && onDoubleClick(product)}>
       <div className="product-card__image-wrapper">
-        {product.badge && (
+        {!product.inStock && (
+          <span className="product-card__badge product-card__badge--soldout">AGOTADO</span>
+        )}
+        {product.badge && product.inStock && (
           <span className="product-card__badge">{product.badge}</span>
         )}
         <img

@@ -16,7 +16,7 @@
   position: relative;
   flex: 1;
   min-height: 360px;
-  background-color: #1a1a1a;
+  background-color: var(--color-dark);
   overflow: hidden;
 }
 
@@ -107,12 +107,15 @@
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.15;
-  margin-bottom: var(--space-20);
+  margin-bottom: var(--space-32); /* Increased from 20px to match Image 2 */
 }
 
 .hero__title-accent {
-  color: var(--color-gold);
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-style: italic;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .hero__subtitle {
@@ -120,7 +123,7 @@
   font-size: 0.9375rem;
   font-weight: 600;
   line-height: 1.5;
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-24); /* Increased from 16px to match Image 2 */
 }
 
 .hero__description {
@@ -162,7 +165,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-gold);
+  background: var(--gradient-gold);
   color: var(--color-dark);
   font-family: var(--font-body);
   font-size: 0.75rem;
@@ -176,7 +179,7 @@
 }
 
 .hero__cta:hover {
-  background-color: #c9a22e;
+  background-color: #B28F20; /* Darker version of the new gold */
   transform: translateY(-1px);
 }
 
@@ -202,19 +205,20 @@
 
 .hero__stat-number {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.75rem; /* Increased from 1.5rem */
   font-weight: 700;
   color: var(--color-gold);
   line-height: 1.2;
+  text-shadow: 0 0 10px rgba(232, 197, 102, 0.2); /* Subtle glow */
 }
 
 .hero__stat-label {
   font-family: var(--font-body);
-  font-size: 0.625rem;
+  font-size: 0.75rem; /* Increased from 0.625rem */
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.9); /* Increased opacity from 0.6 to 0.9 */
 }
 
 @media (min-width: 768px) {

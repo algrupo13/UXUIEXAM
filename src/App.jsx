@@ -14,7 +14,8 @@ import Footer from './components/Footer'
 import CartDrawer from './components/CartDrawer'
 import ProductDetail from './components/ProductDetail'
 import FloatingHelp from './components/FloatingHelp'
-import { featuredProduct } from './data/products'
+import CategoryPage from './components/CategoryPage'
+import { featuredProduct, bombitasDeDefumacion } from './data/products'
 
 function App() {
   const [cartItem, setCartItem] = useState({
@@ -23,6 +24,7 @@ function App() {
   })
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [selectedProduct, setSelectedProduct] = useState(null)
+  const [currentPage, setCurrentPage] = useState('home')
 
   const handleAddToCart = (product) => {
     setCartItem((currentItem) => {
@@ -63,16 +65,30 @@ function App() {
   return (
     <div className="app">
       <TopBar />
-      <Navbar cartCount={cartItem?.quantity || 0} onCartOpen={() => setIsCartOpen(true)} />
+      <Navbar cartCount={cartItem?.quantity || 0} onCartOpen={() => setIsCartOpen(true)} onNavigate={setCurrentPage} />
       <main>
-        <Hero />
-        <Categories />
-        <FeaturedProduct />
-        <ProductGrid onAddToCart={handleAddToCart} onProductDoubleClick={handleProductDoubleClick} />
-        <AboutFounder />
-        <Mission />
-        <Testimonials />
-        <Newsletter />
+        {currentPage === 'home' && (
+          <>
+            <Hero />
+            <Categories />
+            <FeaturedProduct />
+            <ProductGrid onAddToCart={handleAddToCart} onProductDoubleClick={handleProductDoubleClick} />
+            <AboutFounder />
+            <Mission />
+            <Testimonials />
+            <Newsletter />
+          </>
+        )}
+        {currentPage === 'bombitas' && (
+          <CategoryPage
+            title="Bombas de defumación"
+            description="Pequeños rituales de gran poder. Las bombas de defumación liberan humo denso y concentrado, ideal para limpiezas profundas, abrir caminos y transformar la energía de tu espacio."
+            products={bombitasDeDefumacion}
+            productCount={bombitasDeDefumacion.length}
+            onAddToCart={handleAddToCart}
+            onProductDoubleClick={handleProductDoubleClick}
+          />
+        )}
       </main>
       <Footer />
       <CartDrawer

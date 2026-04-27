@@ -125,7 +125,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-8);
-  background-color: var(--color-gold);
+  background: var(--gradient-gold);
   color: var(--color-dark);
   font-family: var(--font-body);
   font-size: 0.75rem;
@@ -134,13 +134,13 @@
   text-transform: uppercase;
   padding: var(--space-16) var(--space-32);
   border-radius: 4px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
   position: relative;
   overflow: hidden;
 }
 
 .featured__cta:hover {
-  background-color: #c9a22e;
+  filter: brightness(0.9);
   transform: translateY(-2px);
 }
 
@@ -207,9 +207,14 @@
   font-size: var(--font-size-label);
   font-weight: 700;
   color: var(--color-dark);
-  background-color: var(--color-gold);
+  background: var(--gradient-gold);
   border-radius: 4px;
   padding: var(--space-12) var(--space-16);
+  transition: filter 0.2s ease;
+}
+
+.featured__shipping-button:hover {
+  filter: brightness(0.9);
 }
 
 .featured__shipping-note {

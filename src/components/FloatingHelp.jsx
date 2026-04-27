@@ -36,8 +36,10 @@ function FloatingHelp() {
       {isOpen && (
         <div className="floating-help__menu">
           <div className="floating-help__menu-header">
-            <span>¿Necesitas ayuda?</span>
+            <h3 className="floating-help__menu-title">¡Hola!</h3>
+            <p className="floating-help__menu-subtitle">¿Cómo podemos ayudarte hoy?</p>
           </div>
+          <div className="floating-help__menu-content">
           <a
             href="https://wa.me/56912345678"
             target="_blank"
@@ -98,6 +100,7 @@ function FloatingHelp() {
               <span>Atención 24/7 con IA</span>
             </div>
           </button>
+          </div>
         </div>
       )}
 

@@ -6,16 +6,17 @@
 
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `--color-sage` | `#7A9482` | Primary brand. Buttons, links, accents, trust badges. |
-| `--color-sage-dark` | `#5E7566` | Hover states, active states for sage elements. |
-| `--color-gold` | `#D4AF37` | CTA buttons, highlights, stat numbers, quote accents. |
-| `--color-neutral` | `#F4F4F4` | Page background, cards, dividers, subtle fills. |
-| `--color-dark` | `#1A1A1A` | Primary text, headings, overlay backgrounds. |
-| `--color-white` | `#FFFFFF` | Card backgrounds, text on dark/colored surfaces. |
+| `--color-sage` | `#6B8272` | Primary brand. Calming background for healing content. |
+| `--color-sage-light` | `#8DA394` | Subtle backgrounds, decorative elements. |
+| `--color-sage-dark` | `#3E4D43` | High-contrast text on light backgrounds, active states. |
+| `--color-gold` | `#C5A028` | Earthy Gold. CTAs, highlights, premium accents ("alma"). |
+| `--color-neutral` | `#F9F7F2` | Warm Cream. Organic background for a premium feel. |
+| `--color-dark` | `#2D332F` | Forest Charcoal. Primary text, headings (softer than pure black). |
+| `--color-white` | `#FFFFFF` | Absolute white for high-contrast UI elements. |
 
 **Opacity utilities**
-- Text on sage: `rgba(255,255,255,0.85)` for body, `rgba(255,255,255,0.6)` for labels
-- Overlays: `rgba(26,26,26,0.35)` cart, `rgba(26,26,26,0.5)` product detail
+- Text on sage: `rgba(255,255,255,0.9)` for body, `rgba(255,255,255,0.7)` for labels (increased for WCAG).
+- Overlays: `rgba(45,51,47,0.35)` cart, `rgba(45,51,47,0.5)` product detail (using new dark color).
 
 ### Typography
 
@@ -92,7 +93,7 @@ Base unit: 4px. Use tokens consistently; avoid magic numbers.
 - Text: `var(--color-dark)`, font-weight 700
 - Padding: `16px 24px` (compact) / `24px 24px` (hero, prominent)
 - Border-radius: `8px`–`10px`
-- Hover: `#c9a22e`, `translateY(-1px)`
+- Hover: `#B28F20` (Darker Gold), `translateY(-1px)`
 
 **Secondary CTA (Sage)**
 - Background: `var(--color-sage)`
@@ -146,7 +147,24 @@ Use **brand colors** for trust recognition:
 
 ---
 
-## 4. Layout Principles
+## 4. Social Proof / Brand Pillars
+
+The Hero section includes key performance indicators (KPIs) to build immediate trust:
+
+| KPI | Value | Rationale |
+|-----|-------|-----------|
+| **Sanación** | `9+ Años` | Establishes authority and longevity in the market. |
+| **Catálogo** | `90+ Productos` | Shows variety and specialized knowledge. |
+| **Calidad** | `100% Natural` | Core brand promise and unique selling proposition (USP). |
+
+**Visual Style**
+- **Numbers**: `var(--font-heading)`, `1.75rem`, `var(--color-gold)`.
+- **Labels**: `var(--font-body)`, `0.75rem` (12px), uppercase, `letter-spacing: 0.1em`.
+- **Color**: Numbers use Gold. Labels use `rgba(255, 255, 255, 0.9)` to ensure clear contrast on green backgrounds.
+
+---
+
+## 5. Layout Principles
 
 ### Grid & Breakpoints
 
@@ -170,13 +188,15 @@ Use **brand colors** for trust recognition:
 
 ---
 
-## 5. Accessibility
+---
 
-- All interactive elements have `cursor: pointer`
-- Modals use `aria-hidden` to manage focus traps
-- Payment badges have `aria-label` with brand name
-- Font smoothing enabled via `-webkit-font-smoothing: antialiased`
-- Minimum touch target: 44×44px (buttons, tabs, FAB)
+## 5. Accessibility & Inclusivity
+
+- **Color Contrast**: All text/background combinations target WCAG AA (4.5:1) or higher. The "Gold on Sage" pattern uses a text-shadow or high-contrast gold to ensure legibility.
+- **Visual Cues**: Interactive elements use `cursor: pointer` and hover transforms.
+- **Focus Management**: Modals use `aria-hidden` and focus trapping to support screen readers.
+- **Typography**: Font smoothing enabled via `-webkit-font-smoothing: antialiased`.
+- **Touch Targets**: Minimum target size of 44×44px for all interactive elements.
 
 ---
 

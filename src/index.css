@@ -1,10 +1,12 @@
 :root {
-  --color-sage: #7A9482;
-  --color-gold: #D4AF37;
-  --color-neutral: #F4F4F4;
-  --color-dark: #1A1A1A;
+  --color-sage: #6B8272;
+  --color-sage-light: #8DA394;
+  --color-sage-dark: #3E4D43;
+  --color-gold: #C5A028;
+  --gradient-gold: linear-gradient(135deg, #E8C566 0%, #C5A028 50%, #B28F20 100%);
+  --color-neutral: #F9F7F2;
+  --color-dark: #2D332F;
   --color-white: #FFFFFF;
-  --color-sage-dark: #5E7566;
 
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Montserrat', sans-serif;

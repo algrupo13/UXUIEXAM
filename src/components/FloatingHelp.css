@@ -3,8 +3,8 @@
   bottom: 24px;
   right: 24px;
   z-index: 500;
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background-color: var(--color-sage);
   color: var(--color-white);
@@ -14,97 +14,125 @@
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(122, 148, 130, 0.4);
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .floating-help__fab:hover {
-  transform: scale(1.08);
-  background-color: var(--color-sage-dark);
-  box-shadow: 0 6px 24px rgba(122, 148, 130, 0.5);
+  transform: scale(1.1) rotate(5deg);
+  background: var(--gradient-gold);
+  color: var(--color-dark);
+  box-shadow: 0 8px 32px rgba(197, 160, 40, 0.4);
 }
 
 .floating-help__fab--active {
-  background-color: var(--color-dark);
+  background: var(--color-dark);
+  transform: rotate(90deg);
 }
 
 .floating-help__menu {
   position: fixed;
-  bottom: 92px;
+  bottom: 100px;
   right: 24px;
   z-index: 499;
-  width: 280px;
+  width: 320px;
   background-color: var(--color-white);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  animation: floating-help-slide-up 0.25s ease;
+  animation: floating-help-slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes floating-help-slide-up {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(20px) scale(0.95);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
 .floating-help__menu-header {
-  padding: var(--space-16) var(--space-20);
+  padding: var(--space-24) var(--space-24);
   background-color: var(--color-sage);
   color: var(--color-white);
+  text-align: center;
+}
+
+.floating-help__menu-title {
   font-family: var(--font-heading);
-  font-size: var(--font-size-body);
+  font-size: 1.5rem;
   font-weight: 700;
+  margin-bottom: var(--space-4);
+}
+
+.floating-help__menu-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--font-size-nav);
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.floating-help__menu-content {
+  padding: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  background-color: var(--color-neutral);
 }
 
 .floating-help__menu-item {
   display: flex;
   align-items: center;
-  gap: var(--space-12);
+  gap: var(--space-16);
   padding: var(--space-12) var(--space-16);
   text-decoration: none;
   color: var(--color-dark);
-  transition: background-color 0.15s ease;
-  background: none;
-  border: none;
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
   width: 100%;
   cursor: pointer;
   text-align: left;
+  transition: all 0.2s ease;
 }
 
 .floating-help__menu-item:hover {
-  background-color: var(--color-neutral);
-}
-
-.floating-help__menu-item--whatsapp:hover {
-  background-color: rgba(37, 211, 102, 0.08);
-}
-
-.floating-help__menu-item--chat:hover {
-  background-color: rgba(122, 148, 130, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--color-sage-light);
 }
 
 .floating-help__menu-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   background-color: var(--color-neutral);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   color: var(--color-sage);
+  transition: all 0.2s ease;
 }
 
 .floating-help__menu-item--whatsapp .floating-help__menu-icon {
+  background-color: rgba(37, 211, 102, 0.1);
+  color: #25d366;
+}
+
+.floating-help__menu-item--whatsapp:hover .floating-help__menu-icon {
   background-color: #25d366;
   color: var(--color-white);
 }
 
 .floating-help__menu-item--chat .floating-help__menu-icon {
+  background-color: rgba(107, 130, 114, 0.1);
+  color: var(--color-sage);
+}
+
+.floating-help__menu-item--chat:hover .floating-help__menu-icon {
   background-color: var(--color-sage);
   color: var(--color-white);
 }
@@ -124,7 +152,7 @@
 
 .floating-help__menu-info span {
   font-family: var(--font-body);
-  font-size: var(--font-size-label);
+  font-size: 0.8125rem;
   font-weight: 400;
   color: #888;
 }
