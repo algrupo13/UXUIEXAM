@@ -1,6 +1,7 @@
 .footer {
-  background-color: #f8f6f4;
+  background-color: var(--color-white);
   padding: var(--space-64) var(--space-24) var(--space-24);
+  border-top: 1px solid #e8e6e4;
 }
 
 .footer__wrapper {
@@ -128,7 +129,6 @@
   padding: var(--space-32);
   background-color: var(--color-white);
   border-radius: 12px;
-  border: 1px solid #e8e6e4;
 }
 
 .footer__payments-label {

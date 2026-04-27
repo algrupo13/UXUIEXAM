@@ -3,6 +3,20 @@ import './Hero.css'
 
 function Hero() {
   const [toastVisible, setToastVisible] = useState(true)
+  const [showPromo, setShowPromo] = useState(false)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+
+  const openPromo = () => setShowPromo(true)
+  const closePromo = () => setShowPromo(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    alert(`Código enviado a ${email}`)
+    closePromo()
+    setName('')
+    setEmail('')
+  }
 
   return (
     <section className="hero">
@@ -13,9 +27,13 @@ function Hero() {
           alt="Sahumerios, resinas y hierbas naturales dispuestas artesanalmente"
         />
         {toastVisible && (
-          <div className="hero__toast">
+          <div className="hero__toast" onClick={openPromo} role="button" tabIndex={0}>
             <span>Magia aquí</span>
-            <button className="hero__toast-close" aria-label="Cerrar" onClick={() => setToastVisible(false)}>
+            <button
+              className="hero__toast-close"
+              aria-label="Cerrar"
+              onClick={(e) => { e.stopPropagation(); setToastVisible(false) }}
+            >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <path d="M18 6L6 18M6 6l12 12"/>
               </svg>
@@ -23,6 +41,50 @@ function Hero() {
           </div>
         )}
       </div>
+
+      {showPromo && (
+        <>
+          <div className="promo-overlay" onClick={closePromo} />
+          <div className="promo-modal" role="dialog" aria-modal="true">
+            <button className="promo-modal__close" onClick={closePromo} aria-label="Cerrar">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+
+            <h2 className="promo-modal__title">10% off en toda la tienda</h2>
+            <p className="promo-modal__subtitle">Recíbelo al dejar tus datos</p>
+
+            <form className="promo-modal__form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                className="promo-modal__input"
+                placeholder="Nombre"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              <input
+                type="email"
+                className="promo-modal__input"
+                placeholder="Correo electrónico"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button type="submit" className="promo-modal__button">
+                Canjear Código
+              </button>
+            </form>
+
+            <p className="promo-modal__disclaimer">
+              Al registrarte, aceptas recibir correos electrónicos de marketing.
+              Consulta nuestra política de privacidad y los términos de servicio
+              para obtener más información.
+            </p>
+          </div>
+        </>
+      )}
 
       <div className="hero__content">
         <div className="hero__badge">

@@ -31,6 +31,7 @@
   position: fixed;
   bottom: var(--space-24);
   left: var(--space-24);
+  z-index: 900;
   background-color: var(--color-white);
   color: var(--color-dark);
   padding: var(--space-16) var(--space-24);
@@ -43,6 +44,13 @@
   gap: var(--space-16);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
   animation: hero-toast-float 3s ease-in-out infinite;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero__toast:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes hero-toast-float {
@@ -113,6 +121,7 @@
 .hero__title-accent {
   background: var(--gradient-gold);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-style: italic;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
@@ -253,5 +262,164 @@
 
   .hero__toast {
     left: var(--space-32);
+  }
+}
+
+/* Promo Modal */
+.promo-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  background-color: rgba(26, 26, 26, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: promoFadeIn 0.4s ease;
+}
+
+@keyframes promoFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.promo-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2501;
+  width: min(90vw, 440px);
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: var(--space-64) var(--space-48);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
+  animation: promoSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes promoSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.promo-modal__close {
+  position: absolute;
+  top: var(--space-24);
+  right: var(--space-24);
+  background: none;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: var(--space-8);
+  border-radius: 50%;
+}
+
+.promo-modal__close:hover {
+  background-color: var(--color-neutral);
+  color: var(--color-dark);
+  transform: rotate(90deg);
+}
+
+.promo-modal__title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  text-align: center;
+  margin-bottom: var(--space-12);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.promo-modal__subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  text-align: center;
+  margin-bottom: var(--space-40);
+}
+
+.promo-modal__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  margin-bottom: var(--space-32);
+}
+
+.promo-modal__input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: var(--space-24) var(--space-24);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.promo-modal__input:focus {
+  border-color: var(--color-sage);
+  background-color: #fcfcfc;
+  box-shadow: 0 0 0 4px rgba(122, 148, 130, 0.1);
+}
+
+.promo-modal__input::placeholder {
+  color: #bbb;
+}
+
+.promo-modal__button {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--white, #fff);
+  background-color: var(--color-dark);
+  border-radius: 8px;
+  padding: var(--space-24);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: var(--space-8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-transform: none;
+}
+
+.promo-modal__button:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.promo-modal__disclaimer {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #999;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 340px;
+}
+
+@media (max-width: 500px) {
+  .promo-modal {
+    width: calc(100vw - 32px);
+    padding: var(--space-48) var(--space-24);
+  }
+
+  .promo-modal__title {
+    font-size: 1.75rem;
   }
 }
