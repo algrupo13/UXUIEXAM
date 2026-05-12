@@ -23,7 +23,7 @@ function Hero() {
       <div className="hero__image-section">
         <img
           className="hero__image"
-          src="/src/img/DSC1947-scaled.webp"
+          src="/img/DSC1947-scaled.webp"
           alt="Sahumerios, resinas y hierbas naturales dispuestas artesanalmente"
         />
         {toastVisible && (

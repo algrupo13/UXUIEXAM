@@ -7,7 +7,7 @@ function AboutFounder() {
         <div className="about-founder__image-wrapper">
           <img
             className="about-founder__image"
-            src="/src/img/founder/nano-banana-2026-02-24T20-07-32.webp"
+            src="/img/founder/nano-banana-2026-02-24T20-07-32.webp"
             alt="Paola, fundadora de Adikari"
             loading="lazy"
           />

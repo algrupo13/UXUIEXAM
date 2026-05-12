@@ -13,7 +13,7 @@ function Footer() {
           <div className="footer__brand">
             <img
               className="footer__logo"
-              src="/src/img/logo/nano-banana-2026-02-24T15-44-53.avif"
+              src="/img/logo/nano-banana-2026-02-24T15-44-53.avif"
               alt="ASIKARI"
             />
             <p className="footer__tagline">

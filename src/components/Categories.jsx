@@ -4,37 +4,37 @@ const categories = [
   {
     title: 'Sahumerios',
     subtitle: 'Sahumos · Aromaterapia · Salvia Blanca',
-    image: '/src/img/ritual/OfertaGancho3.webp',
+    image: '/img/ritual/OfertaGancho3.webp',
     hasIcon: true,
   },
   {
     title: 'Linea Mexico',
     subtitle: 'Brisquetas · Copal · Salvia Blanca',
-    image: '/src/img/ritual/Carrrusel.webp',
+    image: '/img/ritual/Carrrusel.webp',
     hasIcon: true,
   },
   {
     title: 'Oráculos & Tarot',
     subtitle: 'Tarot · Oráculos',
-    image: '/src/img/ritual/4.webp',
+    image: '/img/ritual/4.webp',
     hasIcon: true,
   },
   {
     title: 'Box Rituales',
     subtitle: 'Kits Completos · Aromaterapia',
-    image: '/src/img/ritual/box-rituales.webp',
+    image: '/img/ritual/box-rituales.webp',
     hasIcon: false,
   },
   {
     title: 'Accesorios',
     subtitle: 'Complementos · Ritual · Decoración',
-    image: '/src/img/ritual/Copilot_20260421_132547.webp',
+    image: '/img/ritual/Copilot_20260421_132547.webp',
     hasIcon: false,
   },
   {
     title: 'Ofertas',
     subtitle: 'Descuentos Especiales',
-    image: '/src/img/ritual/Carrusel3.webp',
+    image: '/img/ritual/Carrusel3.webp',
     hasIcon: false,
   },
 ]

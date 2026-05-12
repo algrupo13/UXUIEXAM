@@ -35,7 +35,7 @@ function Navbar({ cartCount, onCartOpen, onNavigate }) {
       <div className="navbar__brand" onClick={() => handleNavigate('home')}>
         <img
           className="navbar__logo-img"
-          src="/src/img/logo/nano-banana-2026-02-24T15-44-53.avif"
+          src="/img/logo/nano-banana-2026-02-24T15-44-53.avif"
           alt="ADIKARI"
         />
       </div>
@@ -90,7 +90,7 @@ function Navbar({ cartCount, onCartOpen, onNavigate }) {
                 <button type="button" className="navbar__mega-product" onClick={() => handleNavigate('home')}>
                   <img
                     className="navbar__mega-product-img"
-                    src="/src/img/nav/aire.webp"
+                    src="/img/nav/aire.webp"
                     alt="5 Elementos - Aire (Alegría)"
                   />
                   <span className="navbar__mega-product-name">5 Elementos - Aire (Alegría)</span>
@@ -99,7 +99,7 @@ function Navbar({ cartCount, onCartOpen, onNavigate }) {
                 <button type="button" className="navbar__mega-product" onClick={() => handleNavigate('home')}>
                   <img
                     className="navbar__mega-product-img"
-                    src="/src/img/nav/tierra.webp"
+                    src="/img/nav/tierra.webp"
                     alt="5 Elementos - Tierra (Armonía)"
                   />
                   <span className="navbar__mega-product-name">5 Elementos - Tierra (Armonía)</span>
@@ -184,7 +184,7 @@ function Navbar({ cartCount, onCartOpen, onNavigate }) {
       <div className={`navbar__mobile-overlay ${isMobileMenuOpen ? 'navbar__mobile-overlay--open' : ''}`} onClick={toggleMobileMenu} />
       <div className={`navbar__mobile-drawer ${isMobileMenuOpen ? 'navbar__mobile-drawer--open' : ''}`}>
         <div className="navbar__mobile-header">
-          <img className="navbar__logo-img" src="/src/img/logo/nano-banana-2026-02-24T15-44-53.avif" alt="ADIKARI" />
+          <img className="navbar__logo-img" src="/img/logo/nano-banana-2026-02-24T15-44-53.avif" alt="ADIKARI" />
           <button className="navbar__mobile-close" onClick={toggleMobileMenu}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M18 6L6 18M6 6l12 12" />

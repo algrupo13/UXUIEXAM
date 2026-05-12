@@ -39,10 +39,10 @@ function ProductDetail({ product, onClose, onAddToCart }) {
       'Favorece la conexión espiritual',
     ],
     images: [
-      '/src/img/products/copal-mexicano-granulado-10/1-scaled-jpg.webp',
-      '/src/img/products/copal-mexicano-granulado-10/002-13-scaled-jpg.webp',
-      '/src/img/products/copal-mexicano-granulado-10/Copilot_20260421_160259.webp',
-      '/src/img/products/copal-mexicano-granulado-10/Copilot_20260424_143108.webp',
+      '/img/products/copal-mexicano-granulado-10/1-scaled-jpg.webp',
+      '/img/products/copal-mexicano-granulado-10/002-13-scaled-jpg.webp',
+      '/img/products/copal-mexicano-granulado-10/Copilot_20260421_160259.webp',
+      '/img/products/copal-mexicano-granulado-10/Copilot_20260424_143108.webp',
     ],
     usageInstructions: [
       'Enciende la punta de la varita con una llama constante',
