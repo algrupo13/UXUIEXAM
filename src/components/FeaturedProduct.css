@@ -226,6 +226,60 @@
   margin-top: var(--space-12);
 }
 
+.featured__payments {
+  width: 100%;
+  max-width: 420px;
+  padding: var(--space-16);
+  text-align: center;
+  margin-top: var(--space-16);
+}
+
+.featured__payments-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--font-size-label);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-12);
+}
+
+.featured__payments-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+  margin-bottom: var(--space-16);
+}
+
+.featured__payment-icon {
+  height: 40px;
+  width: auto;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+.featured__payment-icon--webpay {
+  height: 40px;
+  width: auto;
+}
+
+.featured__payments-seal {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--font-size-label);
+  font-weight: 600;
+  color: var(--color-sage);
+}
+
+.featured__payments-seal svg {
+  flex-shrink: 0;
+}
+
 @media (min-width: 768px) {
   .featured {
     padding: var(--space-80) var(--space-48);

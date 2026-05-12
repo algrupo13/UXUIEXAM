@@ -148,34 +148,15 @@
   gap: var(--space-12);
 }
 
-.footer__payment-badge {
-  font-family: var(--font-body);
-  font-size: var(--font-size-label);
-  font-weight: 700;
-  padding: var(--space-8) var(--space-16);
-  border-radius: 20px;
-  color: var(--color-white);
-  letter-spacing: 0.5px;
+.footer__payment-icon {
+  height: 34px;
+  width: auto;
+  flex-shrink: 0;
 }
 
-.footer__payment-badge--visa {
-  background-color: #1a1f71;
-}
-
-.footer__payment-badge--mastercard {
-  background: linear-gradient(90deg, #eb001b 0%, #f79e1b 100%);
-}
-
-.footer__payment-badge--webpay {
-  background-color: #e31837;
-}
-
-.footer__payment-badge--mercado {
-  background-color: #00b2e3;
-}
-
-.footer__payment-badge--paypal {
-  background-color: #003087;
+.footer__payment-icon--webpay {
+  height: 34px;
+  width: auto;
 }
 
 @media (min-width: 1024px) {

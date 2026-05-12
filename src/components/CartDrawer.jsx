@@ -1,6 +1,11 @@
 import './CartDrawer.css'
 import { useState } from 'react'
 import { formatPrice } from '../data/products'
+import visaLogo from '../assets/payments/visa.svg'
+import mastercardLogo from '../assets/payments/mastercard.svg'
+import webpayLogo from '../assets/payments/webpay.svg'
+import mercadoPagoLogo from '../assets/payments/mercado-pago.svg'
+import paypalLogo from '../assets/payments/paypal.svg'
 
 function CartDrawer({ isOpen, item, onClose, onIncrement, onDecrement, onRemove }) {
   const [showShippingCalc, setShowShippingCalc] = useState(false)
@@ -189,22 +194,12 @@ function CartDrawer({ isOpen, item, onClose, onIncrement, onDecrement, onRemove 
           <button className="cart__checkout" type="button">Pagar</button>
 
           <div className="cart__payments">
-            <div className="cart__payments-groups">
-              <div className="cart__payments-group">
-                <span className="cart__payments-group-label">Tarjetas</span>
-                <div className="cart__payments-group-badges">
-                  <span className="cart__payment-badge cart__payment-badge--visa" aria-label="Visa">V</span>
-                  <span className="cart__payment-badge cart__payment-badge--mastercard" aria-label="Mastercard">M</span>
-                </div>
-              </div>
-              <div className="cart__payments-group">
-                <span className="cart__payments-group-label">Digital</span>
-                <div className="cart__payments-group-badges">
-                  <span className="cart__payment-badge cart__payment-badge--webpay" aria-label="Webpay">W</span>
-                  <span className="cart__payment-badge cart__payment-badge--mercado" aria-label="Mercado Pago">MP</span>
-                  <span className="cart__payment-badge cart__payment-badge--paypal" aria-label="PayPal">P</span>
-                </div>
-              </div>
+            <div className="cart__payments-row">
+              <img className="cart__payment-icon cart__payment-icon--visa" src={visaLogo} alt="Visa" />
+              <img className="cart__payment-icon cart__payment-icon--mastercard" src={mastercardLogo} alt="Mastercard" />
+              <img className="cart__payment-icon cart__payment-icon--webpay" src={webpayLogo} alt="Webpay Plus" />
+              <img className="cart__payment-icon cart__payment-icon--mercado" src={mercadoPagoLogo} alt="Mercado Pago" />
+              <img className="cart__payment-icon cart__payment-icon--paypal" src={paypalLogo} alt="PayPal" />
             </div>
             <div className="cart__payments-seal">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

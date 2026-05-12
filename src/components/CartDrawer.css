@@ -358,71 +358,24 @@
   border-top: 1px solid #ececec;
 }
 
-.cart__payments-groups {
+.cart__payments-row {
   display: flex;
-  align-items: center;
-  gap: var(--space-24);
-}
-
-.cart__payments-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.cart__payments-group-label {
-  font-family: var(--font-body);
-  font-size: 0.625rem;
-  font-weight: 600;
-  color: #aaa;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.cart__payments-group-badges {
-  display: flex;
-  align-items: center;
-  gap: var(--space-6);
-}
-
-.cart__payment-badge {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-body);
-  font-size: 0.5625rem;
-  font-weight: 700;
-  color: var(--color-white);
-  letter-spacing: -0.2px;
+  gap: var(--space-10);
+  margin-bottom: var(--space-12);
 }
 
-/* NOTE: Payment badges use brand colors intentionally (not monocromatic)
-   to maintain visual trust recognition at checkout. Do NOT override to theme colors.
-   Visa: #1a1f71 | Mastercard: gradient #eb001b→#f79e1b | Webpay: #e31837
-   MercadoPago: #00b2e3 | PayPal: #003087 */
-
-.cart__payment-badge--visa {
-  background-color: #1a1f71;
+.cart__payment-icon {
+  height: 28px;
+  width: auto;
+  flex-shrink: 0;
 }
 
-.cart__payment-badge--mastercard {
-  background: linear-gradient(135deg, #eb001b 0%, #f79e1b 100%);
-}
-
-.cart__payment-badge--webpay {
-  background-color: #e31837;
-}
-
-.cart__payment-badge--mercado {
-  background-color: #00b2e3;
-}
-
-.cart__payment-badge--paypal {
-  background-color: #003087;
+.cart__payment-icon--webpay {
+  height: 28px;
+  width: auto;
 }
 
 .cart__payments-seal {

@@ -1,4 +1,9 @@
 import './Footer.css'
+import visaLogo from '../assets/payments/visa.svg'
+import mastercardLogo from '../assets/payments/mastercard.svg'
+import webpayLogo from '../assets/payments/webpay.svg'
+import mercadoPagoLogo from '../assets/payments/mercado-pago.svg'
+import paypalLogo from '../assets/payments/paypal.svg'
 
 function Footer() {
   return (
@@ -28,11 +33,11 @@ function Footer() {
         <div className="footer__payments">
           <span className="footer__payments-label">Pagos seguros con</span>
           <div className="footer__payments-list">
-            <span className="footer__payment-badge footer__payment-badge--visa">VISA</span>
-            <span className="footer__payment-badge footer__payment-badge--mastercard">Mastercard</span>
-            <span className="footer__payment-badge footer__payment-badge--webpay">Webpay</span>
-            <span className="footer__payment-badge footer__payment-badge--mercado">Mercado Pago</span>
-            <span className="footer__payment-badge footer__payment-badge--paypal">PayPal</span>
+            <img className="footer__payment-icon footer__payment-icon--visa" src={visaLogo} alt="Visa" />
+            <img className="footer__payment-icon footer__payment-icon--mastercard" src={mastercardLogo} alt="Mastercard" />
+            <img className="footer__payment-icon footer__payment-icon--webpay" src={webpayLogo} alt="Webpay Plus" />
+            <img className="footer__payment-icon footer__payment-icon--mercado" src={mercadoPagoLogo} alt="Mercado Pago" />
+            <img className="footer__payment-icon footer__payment-icon--paypal" src={paypalLogo} alt="PayPal" />
           </div>
         </div>
 
