@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import TopBar from './components/TopBar'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -25,6 +25,28 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [selectedProduct, setSelectedProduct] = useState(null)
   const [currentPage, setCurrentPage] = useState('home')
+  const [pendingScrollTarget, setPendingScrollTarget] = useState(null)
+
+  useEffect(() => {
+    if (!pendingScrollTarget) return
+
+    const target = document.getElementById(pendingScrollTarget)
+    if (!target) return
+
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setPendingScrollTarget(null)
+  }, [currentPage, pendingScrollTarget])
+
+  const handleNavigate = (page) => {
+    if (page === 'about') {
+      setCurrentPage('home')
+      setPendingScrollTarget('sobre-nosotros')
+      return
+    }
+
+    setCurrentPage(page)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   const handleAddToCart = (product) => {
     setCartItem((currentItem) => {
@@ -65,7 +87,7 @@ function App() {
   return (
     <div className="app">
       <TopBar />
-      <Navbar cartCount={cartItem?.quantity || 0} onCartOpen={() => setIsCartOpen(true)} onNavigate={setCurrentPage} />
+      <Navbar cartCount={cartItem?.quantity || 0} onCartOpen={() => setIsCartOpen(true)} onNavigate={handleNavigate} />
       <main>
         {currentPage === 'home' && (
           <>

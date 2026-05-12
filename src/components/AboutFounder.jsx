@@ -2,7 +2,7 @@ import './AboutFounder.css'
 
 function AboutFounder() {
   return (
-    <section className="about-founder">
+    <section className="about-founder" id="sobre-nosotros">
       <div className="about-founder__wrapper">
         <div className="about-founder__image-wrapper">
           <img
